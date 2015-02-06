@@ -105,6 +105,11 @@ Other methods an `Expert` needs to provide:
 
 ## Release notes
 
+### 0.15.0 (dev)
+
+#### Breaking changes
+* Removed `jQuery.valueview.disable`, `jQuery.valueview.enable` and `jQuery.valueview.isDisabled`. These function were used to mock native `jQuery.Widget` functionality while adding a full `draw` cycle on top. `jQuery.valueview.draw` does not consider the state anymore.
+
 ### 0.14.1 (2015-03-16)
 
 ### Bugfixes
@@ -113,8 +118,7 @@ Other methods an `Expert` needs to provide:
 
 ### 0.14.0 (2015-03-12)
 
-### Breaking changes
-
+#### Breaking changes
 * Removed `jQuery.NativeEventHandler`.
 
 #### Bugfixes
