@@ -103,8 +103,7 @@
 
 			var calendarModel = value.getOption( 'calendarModel' ),
 				msg = this._messageProvider.getMessage(
-					this._prefix + '-'
-						+ TimeValue.getCalendarModelTextByUri( calendarModel ).toLowerCase()
+					this._prefix + '-' + TimeValue.getCalendarModelKeyByUri( calendarModel )
 				);
 
 			if( !msg ) {
@@ -113,12 +112,12 @@
 
 			this.$calendarhint.children( '.' + this._prefix + '-message' ).text( msg );
 
-			this._otherCalendar = calendarModel === TimeValue.CALENDARS.GREGORIAN.uri
-				? TimeValue.CALENDARS.JULIAN.uri
-				: TimeValue.CALENDARS.GREGORIAN.uri;
+			this._otherCalendar = calendarModel === TimeValue.CALENDARS.GREGORIAN
+				? TimeValue.CALENDARS.JULIAN
+				: TimeValue.CALENDARS.GREGORIAN;
 
 			msg = this._messageProvider.getMessage(
-				this._prefix + '-switch-' + this._otherCalendar.toLowerCase()
+				this._prefix + '-switch-' + TimeValue.getCalendarModelKeyByUri( this._otherCalendar )
 			);
 			if( msg ) {
 				this.$calendarhint.children( '.' + this._prefix + '-switch' ).html( msg );

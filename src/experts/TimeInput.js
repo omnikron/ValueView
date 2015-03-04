@@ -50,7 +50,7 @@
 			$.proxy( this._onRotatorChange, this ),
 			function() {
 				var value = self.viewState().value();
-				return value && value.getOption( 'calendarName' );
+				return value && value.getOption( 'calendarModel' );
 			}
 		);
 
@@ -177,11 +177,11 @@
 	 */
 	function getCalendarValues( messageProvider ) {
 		var calendarValues = [];
-		$.each( TimeValue.CALENDARS, function( calendarKey, calendar ) {
+		$.each( TimeValue.CALENDARS, function( key, uri ) {
 			var label = messageProvider.getMessage(
-				'valueview-expert-timevalue-calendar-' + calendar.text.toLowerCase()
-			) || calendar.text;
-			calendarValues.push( { value: calendar.uri, label: label } );
+				'valueview-expert-timevalue-calendar-' + key.toLowerCase()
+			) || key.toLowerCase();
+			calendarValues.push( { value: uri, label: label } );
 		} );
 		return calendarValues;
 	}
