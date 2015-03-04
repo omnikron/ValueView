@@ -107,8 +107,10 @@ Other methods an `Expert` needs to provide:
 
 ### 0.14.0 (dev)
 
-### Breaking changes
+#### Enhancements
+* Adapt to DataValuesJavaScript 0.7.0.
 
+### Breaking changes
 * Removed `jQuery.NativeEventHandler`.
 
 #### Bugfixes

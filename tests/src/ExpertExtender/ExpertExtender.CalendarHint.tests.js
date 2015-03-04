@@ -7,7 +7,7 @@
 	$,
 	ExpertExtender,
 	testExpertExtenderExtension,
-	Time,
+	TimeValue,
 	HashMessageProvider,
 	sinon,
 	QUnit,
@@ -37,11 +37,11 @@
 				'valueview-expertextender-calendarhint-switch-julian': 'MSG2'
 			} ),
 			function() {
-				return new time.Time( '2014-01-01' );
+				return new dv.TimeValue( '2014-01-01T00:00:00Z' );
 			},
 			null
 		);
-		var $extender = $( '<div />' ).appendTo( 'body' ) ;
+		var $extender = $( '<div />' ).appendTo( 'body' );
 
 		calendarHint.init( $extender );
 		calendarHint.draw();
@@ -146,7 +146,7 @@
 	jQuery,
 	jQuery.valueview.ExpertExtender,
 	jQuery.valueview.tests.testExpertExtenderExtension,
-	time.Time,
+	dataValues.TimeValue,
 	util.HashMessageProvider,
 	sinon,
 	QUnit,
